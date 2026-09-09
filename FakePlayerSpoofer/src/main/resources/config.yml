@@ -1,0 +1,144 @@
+# =========================================================
+#                 FakePlayerSpoofer Configuration
+#       24/7 Organic Player Count Spoofer & In-Game Tab
+# =========================================================
+
+# Master switch: enable or disable the spoofer
+enabled: true
+
+# Mode:
+#   DYNAMIC_247 -> Automatically adjusts fake player count depending on time of day (organic curve)
+#   STATIC      -> Uses a fixed custom fake player count
+#   MULTIPLIER  -> Multiplies real online players by a multiplier
+mode: "DYNAMIC_247"
+
+# Whether to add actual real online players to the spoofed total
+include-real-players: true
+
+# Static mode configuration
+static-count: 25
+
+# Multiplier mode configuration (e.g. 2.0 = 2x players)
+multiplier: 2.0
+
+# 24/7 Dynamic Organic Mode settings:
+# Naturally changes based on real server peak hours
+dynamic-curve:
+  # 02:00 - 07:00 (Late Night / Early morning)
+  late-night:
+    min: 8
+    max: 14
+  # 07:00 - 12:00 (Morning)
+  morning:
+    min: 15
+    max: 24
+  # 12:00 - 18:00 (Afternoon)
+  afternoon:
+    min: 25
+    max: 38
+  # 18:00 - 23:00 (Evening Peak)
+  evening-peak:
+    min: 38
+    max: 56
+  # 23:00 - 02:00 (Night)
+  night:
+    min: 20
+    max: 30
+
+  # Interval in seconds to apply organic micro-fluctuations (e.g. +1/-1 every 45s)
+  fluctuation-interval-seconds: 45
+  # Max fluctuation step per interval
+  fluctuation-delta: 3
+
+# Max players (slot) spoofing on server list
+max-players:
+  spoof-max: true
+  # If true, max slots will be (current spoofed online + dynamic-buffer), e.g. 50/51
+  dynamic-buffer: 1
+  # If dynamic-buffer is 0 or spoof-max is false, fixed max slots is used:
+  fixed-max: 100
+
+# Server List Hover Sample Tooltip (when hovering over player count on server list)
+hover-sample:
+  enabled: true
+  # Maximum sample player names to show in tooltip (Vanilla Minecraft allows ~12)
+  sample-count: 10
+
+# In-Game TAB Player List Settings
+# Injects fake player names directly into the TAB player list when players press Tab in-game!
+tab-list:
+  # Master toggle: show fake players in the in-game TAB player list
+  enabled: true
+
+  # Mode for how many fake players to show in the TAB list:
+  #   FIXED  -> Shows a fixed number of fake players (set below in 'count')
+  #   SYNC   -> Dynamically matches the fake count from the active 24/7 curve
+  mode: "FIXED"
+
+  # Number of fake players to display in the TAB menu (when mode is FIXED)
+  count: 12
+
+  # Fake ping bar latency (in ms, 15-40ms displays full green connection bars)
+  fake-ping: 28
+
+  # GameMode to display: SURVIVAL, CREATIVE, ADVENTURE
+  gamemode: "SURVIVAL"
+
+  # Display name format in TAB menu (%name% is replaced with fake username)
+  name-format: "&7%name%"
+
+  # Interval in seconds to update/rotate fake players in the TAB menu
+  refresh-interval-seconds: 30
+
+# Pool of authentic looking usernames used for Hover Tooltip and In-Game TAB list
+fake-names-pool:
+  - "Viper"
+  - "ShadowNinja"
+  - "NightWolf"
+  - "ArcticFox"
+  - "Phoenix_99"
+  - "SkyWalker"
+  - "FlameStrike"
+  - "Zenith"
+  - "Krypton"
+  - "GhostRider"
+  - "BladeMaster"
+  - "DragonSlayer"
+  - "IronClad"
+  - "Thunder"
+  - "ApexPredator"
+  - "Cosmic_Gamer"
+  - "SwiftBlade"
+  - "SilentKill"
+  - "FrostByte"
+  - "Hyperion"
+  - "Vortex"
+  - "Alpha_Dog"
+  - "Titanium"
+  - "ShadowStrike"
+  - "Valkyrie"
+  - "Reaper_X"
+  - "ZeroGravity"
+  - "CrimsonKing"
+  - "NeonGhost"
+  - "CyberPunk"
+
+# Messages
+messages:
+  prefix: "<#ff80bf>&l[FakePlayerSpoofer]&r "
+  no-permission: "&cYou do not have permission to use this command."
+  enabled: "&aFakePlayerSpoofer has been &2&lENABLED&a."
+  disabled: "&cFakePlayerSpoofer has been &4&lDISABLED&c."
+  mode-changed: "&aSpoofer mode set to &e%mode%&a."
+  count-set: "&aStatic fake player count set to &e%count%&a."
+  tab-toggled: "&aIn-game TAB fake player list is now %status%&a."
+  reloaded: "&aFakePlayerSpoofer configuration reloaded successfully."
+  status:
+    - "&d&m----------------------------------------------------"
+    - "<#ff80bf>&l  FAKE PLAYER SPOOFER &7- &fStatus"
+    - "&8 » &7Enabled: %status%"
+    - "&8 » &7Current Mode: &e%mode%"
+    - "&8 » &7Real Online Players: &f%real%"
+    - "&8 » &7Spoofed Server List: &a&l%fake% &7/ &e%max%"
+    - "&8 » &7In-Game TAB List: %tab_status% &8(&e%tab_count% players&8)"
+    - "&d&m----------------------------------------------------"

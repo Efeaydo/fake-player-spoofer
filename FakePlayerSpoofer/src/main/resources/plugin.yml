@@ -1,0 +1,17 @@
+name: FakePlayerSpoofer
+version: '${project.version}'
+main: me.fakeplayerspoofer.FakePlayerSpooferPlugin
+api-version: '1.21'
+description: 24/7 Organic Player Count Spoofer, Server List Ping Enhancer, and In-Game Tab List Display
+softdepend: [PlaceholderAPI]
+
+commands:
+  fakeplayerspoofer:
+    description: Primary command for FakePlayerSpoofer
+    aliases: [fpspoofer, spoofer, fakeplayer]
+    permission: fakeplayerspoofer.admin
+
+permissions:
+  fakeplayerspoofer.admin:
+    description: Full access to FakePlayerSpoofer commands
+    default: op

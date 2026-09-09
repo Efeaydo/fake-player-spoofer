@@ -1,0 +1,12 @@
+me\fakeplayerspoofer\utils\MessageUtil.class
+me\fakeplayerspoofer\tab\TabListManager$1.class
+me\fakeplayerspoofer\FakePlayerSpooferPlugin.class
+me\fakeplayerspoofer\hooks\PlaceholderHook.class
+me\fakeplayerspoofer\managers\SpooferManager$Mode.class
+me\fakeplayerspoofer\managers\SpooferManager$1.class
+me\fakeplayerspoofer\commands\FakePlayerCommand.class
+me\fakeplayerspoofer\listeners\PlayerJoinQuitListener$1.class
+me\fakeplayerspoofer\tab\TabListManager.class
+me\fakeplayerspoofer\listeners\PingListener.class
+me\fakeplayerspoofer\managers\SpooferManager.class
+me\fakeplayerspoofer\listeners\PlayerJoinQuitListener.class
